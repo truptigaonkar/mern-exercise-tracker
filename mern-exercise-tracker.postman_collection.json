@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "445f13aa-e952-4800-8808-d146096e3fd6",
+		"name": "mern-exercise-tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/exercises",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/exercises",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"exercises"
+					]
+				},
+				"description": "get"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/exercises/5e0cb48b94a66b3b14cb9326",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"username2\",\n\t\"description\": \"description2\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/exercises/5e0cb48b94a66b3b14cb9326",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"exercises",
+						"5e0cb48b94a66b3b14cb9326"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				},
+				"description": "get id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/exercises/add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"name3\",\n\t\"description\": \"description3\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/exercises/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"exercises",
+						"add"
+					]
+				},
+				"description": "add"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/exercises/update/5e0cb4bd94a66b3b14cb9327",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"username3\",\n\t\"description\": \"description3\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/exercises/update/5e0cb4bd94a66b3b14cb9327",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"exercises",
+						"update",
+						"5e0cb4bd94a66b3b14cb9327"
+					]
+				},
+				"description": "update id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/exercises/5e0cb4bd94a66b3b14cb9327",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/exercises/5e0cb4bd94a66b3b14cb9327",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"exercises",
+						"5e0cb4bd94a66b3b14cb9327"
+					]
+				},
+				"description": "delete id"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
