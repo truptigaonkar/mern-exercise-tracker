@@ -3,6 +3,8 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import Add from './components/Add';
+import Details from './components/Details';
+import Edit from './components/Edit';
 
 function App() {
   return (
