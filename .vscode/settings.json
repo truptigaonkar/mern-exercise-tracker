@@ -1,0 +1,20 @@
+{
+    "eslint.enable": true,
+    "eslint.autoFixOnSave":true,
+    "eslint.alwaysShowStatus": true,
+    "eslint.format.enable": true,
+    "eslint.probe": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "html",
+      "vue",
+      "react"
+    ],
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "eslint.lintTask.enable": true,
+    "eslint.debug": true
+  }
