@@ -74,6 +74,7 @@ handleDelete(id) {
                 <td>{exercise.description}</td>
                 <td>
                   <Link to={`/Details/${exercise._id}`}><button type="submit">Details</button></Link>
+                  <Link to={`/Edit/${exercise._id}`}><button type="submit">Edit</button></Link>
                   <button type="submit" onClick={() => this.handleDelete(exercise._id)}>Delete</button>
                 </td>
               </tr>
