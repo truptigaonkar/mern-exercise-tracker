@@ -20,7 +20,6 @@ handleAdd(e) {
     description: this.state.description
   })
   .then((response) => {
-      console.log(response);
       window.location = '/';
   })
   .catch((error) => {
