@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class Home extends React.Component {
   constructor(props) {
@@ -71,7 +72,10 @@ handleDelete(id) {
               <tr key={exercise._id}>
                 <td>{exercise.username}</td>
                 <td>{exercise.description}</td>
-                <td><button type="submit" onClick={() => this.handleDelete(exercise._id)}>Delete</button></td>
+                <td>
+                  <Link to={`/Details/${exercise._id}`}><button type="submit">Details</button></Link>
+                  <button type="submit" onClick={() => this.handleDelete(exercise._id)}>Delete</button>
+                </td>
               </tr>
                         ))}
           </tbody>
