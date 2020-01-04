@@ -28,6 +28,11 @@ componentDidMount() {
         });
 }
 
+  // Disappear successMessage after 3000sec.
+  componentDidUpdate() {
+    setTimeout(() => this.setState({ successMessage: '' }), 3000);
+  }
+
 handleDelete(id) {
   axios.delete(`http://localhost:5000/exercises/${id}`)
         .then((response) => {
