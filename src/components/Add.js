@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
 class Add extends Component {
   constructor(props) {
@@ -9,6 +11,8 @@ class Add extends Component {
         username: '',
         description: '',
         errorMessage: '',
+        duration: 0,
+        date: new Date(),
         users: [],
     };
 }
@@ -33,7 +37,9 @@ handleAdd(e) {
   axios.post('http://localhost:5000/exercises/add', 
   {
     username: this.state.username,
-    description: this.state.description
+    description: this.state.description,
+    duration: this.state.duration,
+    date: this.state.date
   })
   .then((response) => {
       window.location = '/';
@@ -55,6 +61,8 @@ handleAdd(e) {
       const { errorMessage } = this.state;
       const { username } = this.state;
       const { description } = this.state;
+      const { duration } = this.state;
+      const { date } = this.state;
       const { users } = this.state;
         return (
           <>
@@ -82,6 +90,11 @@ handleAdd(e) {
               }
               </select>
               <textarea name="description" value={description} placeholder="Description" onChange={(e) => this.setState({ description: e.target.value })} /> 
+              <input type="text" name="duration" value={duration} placeholder="duration in minutes" onChange={(e) => this.setState({ duration: e.target.value })} />
+              <DatePicker
+                selected={date}
+                onChange={(date) => this.setState({ date: date })}
+              />
               <button type="submit">Enter</button>
             </form>
           </>

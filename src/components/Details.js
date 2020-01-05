@@ -47,6 +47,14 @@ Username:
 Description:
               {exercise.description}
             </p>
+            <p>
+Duration:
+              {exercise.duration}
+            </p>
+            <p>
+Date:
+              {exercise.date}
+            </p>
           </div>
         );
     }

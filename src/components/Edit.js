@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import axios from 'axios';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 export default class Edit extends Component {
     constructor(props) {
@@ -7,6 +10,8 @@ export default class Edit extends Component {
         this.state = {
             username: '',
             description: '',
+            duration: '',
+            date: new Date(),
             users: [],
         };
     }
@@ -19,6 +24,8 @@ export default class Edit extends Component {
             this.setState({ 
                 username: response.data.username,
                 description: response.data.description,
+                duration: response.data.duration,
+                //date: response.data.date,
             });
         });
 
@@ -42,7 +49,9 @@ export default class Edit extends Component {
         axios.post(`http://localhost:5000/exercises/update/${id}`, 
   {
     username: this.state.username,
-    description: this.state.description
+    description: this.state.description,
+    duration: this.state.duration,
+    date: this.state.date
   })
   .then((response) => {
       window.location = '/';
@@ -64,10 +73,13 @@ export default class Edit extends Component {
         const { errorMessage } = this.state;
         const { username } = this.state;
         const { description } = this.state;
+        const { duration } = this.state;
+        const { date } = this.state;
         const { users } = this.state;
         return (
           <div>
-            <h3>Edit</h3>
+            <Helmet><title>Edit</title></Helmet>
+            <h3>Edit Exercise</h3>
             <p style={{ color: 'red' }}>{errorMessage}</p>
             <form onSubmit={this.handleEdit.bind(this)}>
               {/* <input type="text" name="username" value={this.state.username} placeholder="Username" onChange={(e) => this.setState({ username: e.target.value })} /> */}
@@ -89,6 +101,11 @@ export default class Edit extends Component {
               }
               </select>
               <textarea name="description" value={description} placeholder="Description" onChange={(e) => this.setState({ description: e.target.value })} /> 
+              <input type="text" name="duration" value={duration} placeholder="duration in minutes" onChange={(e) => this.setState({ duration: e.target.value })} />
+              <DatePicker
+                selected={date}
+                onChange={(date) => this.setState({ date: date })}
+              /> 
               <button type="submit">Update</button>
             </form>
           </div>

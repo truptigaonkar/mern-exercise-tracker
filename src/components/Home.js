@@ -69,6 +69,8 @@ handleDelete(id) {
             <tr>
               <th>Username</th>
               <th>Description</th>
+              <th>Duration</th>
+              <th>Date</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -77,6 +79,8 @@ handleDelete(id) {
               <tr key={exercise._id}>
                 <td>{exercise.username}</td>
                 <td>{exercise.description}</td>
+                <td>{exercise.duration}</td>
+                <td>{exercise.date.substring(0,10)}</td>
                 <td>
                   <Link to={`/Details/${exercise._id}`}><button type="submit">Details</button></Link>
                   <Link to={`/Edit/${exercise._id}`}><button type="submit">Edit</button></Link>
