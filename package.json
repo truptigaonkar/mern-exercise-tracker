@@ -42,6 +42,6 @@
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.17.0",
-    "lint": "^0.7.0"
+    "lint": "^0.8.8"
   }
 }
